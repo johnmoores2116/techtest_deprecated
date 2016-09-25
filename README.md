@@ -20,9 +20,9 @@ repository and then using Maven to compile and run the application.
         * A Java JDK with Runtime (JRE) is installed on your computer (e.g. 1.8.0_101)
         
         * You have supplied your github public key to the author John Moores (john.moores2116@gmail.com) and
-          it has been installed it in the https://github.com/johnmoores2116 github repository (Settings....Deploy Keys).
+          it has been installed in the https://github.com/johnmoores2116 github repository (Settings....Deploy Keys).
           This is necessary for access to the github repository to clone (read / download) the application's
-          artefacts to your computer. I believe that since June 2016, all new github repositories now only support
+          artifacts to your computer. I believe that since June 2016, all new github repositories now only support
           ssh / https.
           
         * You are installing the application in a /tmp/ location on your computer (for windows c:\tmp\)
@@ -45,6 +45,7 @@ instructions to run the main application, the following command can be used to r
 
     mvn test
     
+
 DEPENDENCIES
 
 org.jason (https://github.com/stleary/JSON-java)
@@ -66,6 +67,7 @@ org.skyscreamer JSONAssert (https://github.com/skyscreamer/JSONassert)
 ----------------------------------------------------------------------
 Used to test the JSON objects - Provides convenient way of asserting them.
    
+
 PLUGINS
 org.codehaus.mojo Exec Maven Plugin (http://www.mojohaus.org/)
 --------------------------------------------------------------
