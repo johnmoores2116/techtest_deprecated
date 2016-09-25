@@ -65,7 +65,7 @@ public class PageScraper {
 
         // Page Size (size) specified as BigDecimal to ensure decimal place precision. One decimal
         // place with rounding up. If float is used, decimal place control is not possible / easy. 
-        BigDecimal size = new BigDecimal(0.0).setScale(1, BigDecimal.ROUND_UP);
+        BigDecimal size = new BigDecimal("0.0").setScale(1, BigDecimal.ROUND_UP);
 
         // Unit Price (unitPrice) specified as string (String object) to ensure display of decimal
         // place precision is possible as in two decimal places for GBP currency. If float is used, decimal
@@ -122,14 +122,16 @@ public class PageScraper {
                 // Remove the "/unit" text from the Unit Price Text Working Storage.
                 unitPriceTxtWs = unitPriceTxtWs.replace("/unit", "");
                 
-                // Remove the "£" text from the Unit Price Text Working Storage.
-                unitPriceTxtWs = unitPriceTxtWs.replace("£", "");
-                
+                // Remove the "Â£" text from the Unit Price Text Working Storage.
+                unitPriceTxtWs = unitPriceTxtWs.replace("Â£", "");
+
                 // Now have actual numeric value for Unit Price (unitPrice) in a string form.
                 // Using string (String object) to ensure display of decimal place precision
                 // is possible as in two decimal places for GBP currency.
                 // If float is used, decimal place control is not possible / easy.
-                unitPrice = unitPriceTxtWs;
+                if (unitPriceTxtWs != null && !unitPriceTxtWs.isEmpty() && unitPriceTxtWs.matches("^(-?0[.]\\d+)$|^(-?[0-9]+\\d*([.]\\d+)?)$|^0$")) {
+                	unitPrice = unitPriceTxtWs;
+                }
             }
                         
             // Query (Selector CSS queries) the webpage document to get the Description Element of the
@@ -171,7 +173,7 @@ public class PageScraper {
         // Price Total (priceTotal) specified as BigDecimal to ensure decimal place precision. Two decimal
         // places with rounding down - Hope that's okay for profits ;-). If float is used, decimal place
         // control is not possible / easy. 
-        BigDecimal priceTotal = new BigDecimal(0.00).setScale(2, BigDecimal.ROUND_DOWN); // total unit price.
+        BigDecimal priceTotal = new BigDecimal("0.00").setScale(2, BigDecimal.ROUND_DOWN); // total unit price.
         
         // Get the connection to the webpage using the URL.
         Connection con = Jsoup.connect(url.toString());

@@ -89,7 +89,7 @@ public class PageScraperTest {
 		// to use as an assertion value - 3 out of 4 assertions hopefully okay.
 		assertTrue("Test Failed: Did not find expected Description: "+assertProdInfo.getDescription(), (prodInfo.getDescription().compareTo(assertProdInfo.getDescription()) == 0));
 		assertTrue("Test Failed: Did not find expected Title: "+assertProdInfo.getTitle(), (prodInfo.getTitle().compareTo(assertProdInfo.getTitle()) == 0));
-		assertTrue("Test Failed: Did not find expected Unit Price: "+assertProdInfo.getUnitPrice(), prodInfo.getUnitPrice().compareTo(assertProdInfo.getUnitPrice()) == 0);
+		assertTrue("Test Failed: Did not find expected Unit Price: "+assertProdInfo.getUnitPrice()+". Found "+prodInfo.getUnitPrice()+".", prodInfo.getUnitPrice().compareTo(assertProdInfo.getUnitPrice()) == 0);
 	}
 	
 	/**
@@ -117,7 +117,7 @@ public class PageScraperTest {
             assertTrue("Test Failed: Did not locate expected "+sizeAssertArray[i]+" value in JSON.", json.contains(sizeAssertArray[i]));
             
             // Assert "unitPrice" entries in the JSON list.
-            assertTrue("Test Failed: Did not locate expected "+unitPriceAssertArray[i]+" value in JSON.", json.contains(unitPriceAssertArray[i]));
+            assertTrue("Test Failed: Did not locate expected "+unitPriceAssertArray[i]+" value in JSON. Found "+json+".", json.contains(unitPriceAssertArray[i]));
             
             // Assert "description" entries in the JSON list.
             assertTrue("Test Failed: Did not locate expected "+descriptAssertArray[i]+" value in JSON.", json.contains(descriptAssertArray[i]));
