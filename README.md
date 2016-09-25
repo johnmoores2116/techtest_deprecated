@@ -27,6 +27,8 @@ repository and then using Maven to compile and run the application.
           
         * You are installing the application in a /tmp/ location on your computer (for windows c:\tmp\)
           
+    Start Git Bash (Bash Shell) - For Windows click on the git-bash icon
+    
     cd c:\tmp\
          
     git clone git@github.com:johnmoores2116/techtest.git
