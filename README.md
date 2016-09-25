@@ -1,11 +1,13 @@
 DESCRIPTION
-The techtest application is a Java console application (Java 1.8). It consumes a webpage, processes data from
+
+The techtest application is a Java console application (Java 1.8). It consumes a webpage and processes data from
 the webpage, which includes Product Titles, Product Descriptions and Product Unit Prices. The application then
 presents the data, with some running totals, in a JSON array format. The webpage is a Sainsbury's grocery site.
 The URL to the webpage is given here:
     (http://hiring-tests.s3-website-eu-west-1.amazonaws.com/2015_Developer_Scrape/5_products.html).
 
 RUNNING THE APPLICATION
+
 The instructions that follow describe cloning the git@github.com:johnmoores2116/techtest.git github
 repository and then using Maven to compile and run the application.
     NOTE: The given instructions assume the following:
@@ -25,11 +27,13 @@ repository and then using Maven to compile and run the application.
     mvn exec:java
 
 RUNNING THE TESTS
+
 To run the tests, the same assumptions listed above apply and following completion of the above
 instructions to run the main application, the following command can be used to run the tests:
     mvn test
     
 DEPENDENCIES
+
 org.jason (https://github.com/stleary/JSON-java)
 ------------------------------------------------
 This is used for JSON data processing. It provides a JSON object and JSONArray with useful manipulation
