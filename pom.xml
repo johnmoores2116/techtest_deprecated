@@ -45,15 +45,14 @@
   			<executions>
                 <execution>
                     <goals>
-                        <goal>exec</goal>
+                        <goal>java</goal>
                     </goals>
                 </execution>
             </executions>
             <configuration>
-                <executable>maven</executable>
+                <executable>com.sainsbury.techtest.sitescrape.Main</executable>
                 <arguments>
-                    <argument>-X</argument>
-                    <argument>techtest:dist</argument>
+                    <argument>http://hiring-tests.s3-website-eu-west-1.amazonaws.com/2015_Developer_Scrape/5_products.html</argument>
                 </arguments>
             </configuration>
   		</plugin>
